@@ -87,3 +87,7 @@ inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 "Python
 "set listchars=eol:$,tab:>-
+
+" Better command-line completion
+set wildmenu
+set wildmode=longest:full,full
