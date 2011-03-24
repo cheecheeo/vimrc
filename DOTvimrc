@@ -26,13 +26,13 @@ set backspace=indent,eol,start
 set listchars=tab:>-
 set list
 set nocompatible
-"txt files only
-"set spell
 set mouse=a
 filetype plugin indent on
 
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
+
+autocmd BufNewFile,BufRead *.txt setlocal spell
 
 "remove trailing whitespace after lines and file
 autocmd BufEnter * :%s/\s\+$//e
