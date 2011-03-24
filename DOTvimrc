@@ -30,9 +30,9 @@ set nocompatible
 "set spell
 set mouse=a
 filetype plugin indent on
-set makeprg=omake\ -j16\ `basename\ %\ .ml`
 
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
+autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
 
 "remove trailing whitespace after lines and file
 autocmd BufEnter * :%s/\s\+$//e
