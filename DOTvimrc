@@ -30,6 +30,8 @@ set mouse=a
 set completeopt=menu,preview,longest
 filetype plugin indent on
 
+inoremap ht <esc>
+
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
 
