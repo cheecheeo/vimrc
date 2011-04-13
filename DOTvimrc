@@ -54,6 +54,7 @@ autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
 
+"All files
 autocmd BufEnter * call RemoveRedundantSpace()
 "autocmd BufWritePre * :%s/\s\+$//e
 
