@@ -55,11 +55,17 @@ autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
 
-"remove trailing whitespace after lines and file
-autocmd BufEnter * :%s/\s\+$//e
+autocmd BufEnter * call RemoveRedundantSpace()
 "autocmd BufWritePre * :%s/\s\+$//e
-"remove ^M
-autocmd BufEnter * :%s/[ \t\r]\+$//e
+
+function! RemoveRedundantSpace()
+  if &modifiable > 0
+    "remove trailing whitespace after lines
+    :%s/\s\+$//e
+  else
+    return
+  endif
+endfunction
 
 "intelligently decide whether to insert
 "a tab or a completed word
