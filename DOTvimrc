@@ -24,9 +24,8 @@ set incsearch
 set smarttab
 set autoindent smartindent
 set backspace=indent,eol,start
-set listchars=tab:>-
-set list
 set nocompatible
+set list listchars=tab:>-,trail:.
 set mouse=a
 set completeopt=menu,preview,longest
 set laststatus=2
