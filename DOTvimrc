@@ -36,11 +36,23 @@ filetype plugin indent on
 
 inoremap ht <esc>
 
+"OCaml
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
 autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a
+
+"Perl
+autocmd BufEnter *.pl :%!perltidy
+autocmd BufWritePre *.pl :%!perltidy
+autocmd FileType perl setlocal matchpairs+=<:>
+"highlight advanced perl vars inside strings
+autocmd FileType perl let perl_extended_vars=1
+autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
+
+"Haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
 
+"Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
 
 "remove trailing whitespace after lines and file
@@ -79,23 +91,6 @@ inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
 " I like the harshness of 16 colors
 "set t_Co=256
-
-"Perl
-
-"highlight advanced perl vars inside strings
-"let perl_extended_vars=1
-
-"shortcuts
-"iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr><esc><F2>a <esc><F4>
-
-"perltidy
-"autocmd BufEnter *.pl :%!perltidy
-"autocmd BufWritePre *.pl :%!perltidy
-
-"set matchpairs+=<:>
-
-"Python
-"set listchars=eol:$,tab:>-
 
 " Better command-line completion
 set wildmenu
