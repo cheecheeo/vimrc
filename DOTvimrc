@@ -31,12 +31,15 @@ set mouse=a
 set completeopt=menu,preview,longest
 set laststatus=2
 set confirm
+set wildignore=*.swp
 filetype plugin indent on
 
 inoremap ht <esc>
 
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
+autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a
+"autocmd FileType haskell set wildignore=*.o,*.hi
 
 autocmd BufNewFile,BufRead *.txt setlocal spell
 
