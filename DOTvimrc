@@ -62,8 +62,6 @@ function! RemoveRedundantSpace()
   if &modifiable > 0
     "remove trailing whitespace after lines
     :%s/\s\+$//e
-  else
-    return
   endif
 endfunction
 
