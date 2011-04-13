@@ -1,1 +1,2 @@
 cp ~/.vimrc ~/DOTvimrc || cp DOTvimrc ~/.vimrc
+cp ~/.gvimrc ~/DOTgvimrc || cp DOTgvimrc ~/.gvimrc

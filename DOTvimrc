@@ -16,8 +16,9 @@ set ruler
 set number
 set showmatch
 set mat=5
-set noerrorbells
+set visualbell
 set ignorecase
+set smartcase
 set nohlsearch
 set incsearch
 set smarttab
@@ -28,6 +29,8 @@ set list
 set nocompatible
 set mouse=a
 set completeopt=menu,preview,longest
+set laststatus=2
+set confirm
 filetype plugin indent on
 
 inoremap ht <esc>
