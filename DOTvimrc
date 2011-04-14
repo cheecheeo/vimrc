@@ -93,9 +93,37 @@ inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
     set bg=dark
 :endif
 
-" I like the harshness of 16 colors
-"set t_Co=256
+set t_Co=256
 
 " Better command-line completion
 set wildmenu
 set wildmode=longest:full,full
+
+function! Elem(list, element)
+  if len(filter(copy(a:list), 'a:element == v:val')) > 0
+    return 1
+  else
+    return 0
+endfunction
+
+"function! Intersect(list1, list2)
+"  filter(copy(a:list1), 'eval "Elem(a:list2, v:val)"')
+"endfunction
+
+" Stolen from: http://vim.wikia.com/wiki/Switch_color_schemes
+" Set color scheme according to current time of day on every BufWrite.
+" But we only want it to change at most every hour so we set a global
+" random number on vim startup.
+autocmd BufWritePre * call RandomColor()
+
+let allcolors = map(filter(split(system('ls $VIMRUNTIME/colors')), 'v:val =~ ".vim"'), 'substitute(v:val,"\.vim","","")')
+let randomNumber = str2nr(strftime('%s'))
+function! RandomColor()
+  "Uncomment the following line for all colors installed on this system
+  "let nowcolors = g:allcolors
+  let nowcolors = split('blue darkblue default desert elflord evening koehler murphy pablo peachpuff ron slate torte')
+  let t = str2nr(strftime('%k')) + g:randomNumber
+  let i = t % len(nowcolors)
+  execute 'colorscheme '.nowcolors[i]
+  "echo g:colors_name
+endfunction
