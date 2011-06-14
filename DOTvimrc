@@ -38,7 +38,8 @@ inoremap ht <esc>
 "OCaml
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
-autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi
+autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa
+autocmd FileType ocaml set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa
 
 "Perl
 autocmd BufEnter *.pl :%!perltidy
