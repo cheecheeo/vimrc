@@ -6,6 +6,7 @@
 
 map <F4> a<C-R>=strftime("%c")<CR><Esc>
 map <F2> aJohn Chee<Esc>
+map <F5> :make<CR>
 
 set tabstop=8
 set shiftwidth=2
@@ -35,7 +36,7 @@ filetype plugin indent on
 
 "OCaml
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
-autocmd FileType omlet setlocal makeprg=omake\ -j16\ `basename\ %\ .ml`
+autocmd FileType omlet setlocal makeprg=omake\ -j111\ PROD=true
 autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa
 autocmd FileType ocaml set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa
 
