@@ -50,6 +50,7 @@ autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 
 "Haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
+autocmd FileType haskell setlocal makeprg=ghc\ %
 
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
