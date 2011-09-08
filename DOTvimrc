@@ -34,6 +34,8 @@ set confirm
 set wildignore=*.swp
 filetype plugin indent on
 
+inoremap hh <esc>
+
 "OCaml
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j111\ PROD=true
