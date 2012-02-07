@@ -64,11 +64,24 @@ autocmd BufNewFile,BufRead *.txt setlocal spell
 "All files
 autocmd BufEnter * call RemoveRedundantSpace()
 "autocmd BufWritePre * :%s/\s\+$//e
+" http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
+au BufRead,BufNewFile * let b:start_time=localtime()
+au CursorHold * call UpdateFile()
+au BufWritePre * let b:start_time=localtime()
 
 function! RemoveRedundantSpace()
   if &modifiable > 0
     "remove trailing whitespace after lines
     :%s/\s\+$//e
+  endif
+endfunction
+
+" http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
+" only write if needed and update the start time after the save
+function! UpdateFile()
+  if ((localtime() - b:start_time) >= 2)
+    update
+    let b:start_time=localtime()
   endif
 endfunction
 
