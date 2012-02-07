@@ -51,6 +51,9 @@ autocmd FileType perl setlocal matchpairs+=<:>
 autocmd FileType perl let perl_extended_vars=1
 autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 
+"Python
+autocmd FileType python setlocal shiftwidth=4
+
 "Haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
 autocmd FileType haskell setlocal makeprg=ghc\ %
