@@ -53,6 +53,7 @@ autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 
 "Python
 autocmd FileType python setlocal shiftwidth=4
+autocmd FileType python setlocal makeprg=pyflakes\ %
 
 "Haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
