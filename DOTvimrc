@@ -56,6 +56,8 @@ autocmd FileType python setlocal shiftwidth=4
 autocmd FileType python setlocal makeprg=pyflakes\ %
 
 "Haskell
+autocmd BufEnter *.hs :%!stylish-haskell
+autocmd BufWritePre *.hs :%!stylish-haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
 autocmd FileType haskell setlocal makeprg=ghc\ %
 
