@@ -32,6 +32,7 @@ set completeopt=menu,preview,longest
 set laststatus=2
 set confirm
 set wildignore=*.swp
+set ttyfast
 filetype plugin indent on
 
 inoremap hh <esc>
