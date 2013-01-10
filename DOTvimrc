@@ -33,7 +33,7 @@ set laststatus=2
 set confirm
 set wildignore=*.swp
 set ttyfast
-filetype plugin indent on
+colorscheme slate
 
 inoremap hh <esc>
 vnoremap hh <esc>
@@ -57,10 +57,10 @@ autocmd FileType python setlocal shiftwidth=4
 autocmd FileType python setlocal makeprg=pyflakes\ %
 
 "Haskell
-autocmd BufEnter *.hs :%!stylish-haskell
-autocmd BufWritePre *.hs :%!stylish-haskell
+"autocmd BufEnter *.hs :%!stylish-haskell
+"autocmd BufWritePre *.hs :%!stylish-haskell
 "autocmd FileType haskell set wildignore=*.o,*.hi
-autocmd FileType haskell setlocal makeprg=ghc\ %
+"autocmd FileType haskell setlocal makeprg=ghc\ %
 
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
@@ -138,7 +138,7 @@ endfunction
 " Set color scheme according to current time of day on every BufWrite.
 " But we only want it to change at most every hour so we set a global
 " random number on vim startup.
-autocmd BufWritePre * call RandomColor()
+"autocmd BufWritePre * call RandomColor()
 
 let allcolors = map(filter(split(system('ls $VIMRUNTIME/colors')), 'v:val =~ ".vim"'), 'substitute(v:val,"\.vim","","")')
 let randomNumber = str2nr(strftime('%s'))
@@ -151,3 +151,25 @@ function! RandomColor()
   execute 'colorscheme '.nowcolors[i]
   "echo g:colors_name
 endfunction
+
+
+filetype off
+filetype plugin indent on
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" NOTE: you cannot comment after a 'Bundle' command
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My bundles
+Bundle 'dag/vim2hs'
+" cd ~/.vim/bundle/vimproc/ && make -f make_unix.mak
+Bundle 'Shougo/vimproc'
+" cabal install ghc-mod
+Bundle 'eagletmt/ghcmod-vim'
+Bundle 'kien/ctrlp.vim'
+" sudo aptitude install ack-grep
+Bundle 'mileszs/ack.vim'
