@@ -162,6 +162,7 @@ call vundle#rc()
 " NOTE: you cannot comment after a 'Bundle' command
 " let Vundle manage Vundle
 " required!
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 Bundle 'gmarik/vundle'
 
 " My bundles
@@ -173,3 +174,4 @@ Bundle 'eagletmt/ghcmod-vim'
 Bundle 'kien/ctrlp.vim'
 " sudo aptitude install ack-grep
 Bundle 'mileszs/ack.vim'
+" vim +BundleInstall +qall
