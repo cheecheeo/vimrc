@@ -35,6 +35,9 @@ set wildignore=*.swp
 set ttyfast
 colorscheme slate
 
+let g:syntastic_check_on_open=1
+let g:syntastic_flake8_args='--ignore=E111,E121,E501'
+
 inoremap hh <esc>
 vnoremap hh <esc>
 
@@ -82,11 +85,13 @@ function! RemoveRedundantSpace()
   endif
 endfunction
 
+" :he autosave will fix this someday hopefully
 " http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
 " only write if needed and update the start time after the save
 function! UpdateFile()
   if exists("b:start_time") && &modifiable > 0 && ((localtime() - b:start_time) >= 2)
     update
+    :SyntasticCheck
     let b:start_time=localtime()
   endif
 endfunction
@@ -176,4 +181,5 @@ Bundle 'eagletmt/ghcmod-vim'
 Bundle 'kien/ctrlp.vim'
 " sudo aptitude install ack-grep
 Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
 " vim +BundleInstall +qall
