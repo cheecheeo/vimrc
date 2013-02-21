@@ -41,8 +41,8 @@ vnoremap hh <esc>
 "OCaml
 autocmd FileType omlet nmap <F3> :exec 'echomsg (system("~/.vim/scripts/ocaml.annot.pl' bufname('%') (line2byte(line('.'))+col('.')-1) '"))'<RETURN>
 autocmd FileType omlet setlocal makeprg=omake\ -j111\ PROD=true
-autocmd FileType omlet set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa,*.o,*.annot
-autocmd FileType ocaml set wildignore=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa,*.o,*.annot
+autocmd FileType omlet set wildignore+=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa,*.o,*.annot
+autocmd FileType ocaml set wildignore+=*.cmx,*.cma,*.a,*.cmo,*.cmi,*.cmxa,*.o,*.annot
 
 "Perl
 autocmd BufEnter *.pl :%!perltidy
@@ -55,11 +55,12 @@ autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 "Python
 autocmd FileType python setlocal shiftwidth=4
 autocmd FileType python setlocal makeprg=pyflakes\ %
+autocmd FileType python setlocal wildignore+=*.pyc
 
 "Haskell
 "autocmd BufEnter *.hs :%!stylish-haskell
 "autocmd BufWritePre *.hs :%!stylish-haskell
-"autocmd FileType haskell set wildignore=*.o,*.hi
+"autocmd FileType haskell set wildignore+=*.o,*.hi
 "autocmd FileType haskell setlocal makeprg=ghc\ %
 
 "Text
