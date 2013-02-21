@@ -53,9 +53,10 @@ autocmd FileType perl let perl_extended_vars=1
 autocmd FileType perl iab phbp #!/usr/bin/perl<cr><left><cr>use warnings;<cr>
 
 "Python
-autocmd FileType python setlocal shiftwidth=4
+autocmd FileType python setlocal shiftwidth=2
 autocmd FileType python setlocal makeprg=pyflakes\ %
 autocmd FileType python setlocal wildignore+=*.pyc
+autocmd FileType python setlocal colorcolumn=100
 
 "Haskell
 "autocmd BufEnter *.hs :%!stylish-haskell
