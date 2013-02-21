@@ -181,5 +181,6 @@ Bundle 'eagletmt/ghcmod-vim'
 Bundle 'kien/ctrlp.vim'
 " sudo aptitude install ack-grep
 Bundle 'mileszs/ack.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 " vim +BundleInstall +qall
