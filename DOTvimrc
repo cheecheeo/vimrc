@@ -36,7 +36,7 @@ set ttyfast
 colorscheme slate
 
 let g:syntastic_check_on_open=1
-let g:syntastic_flake8_args='--ignore=E111,E121,E501'
+let g:syntastic_python_flake8_args='--ignore=E111,E121,E501'
 
 inoremap hh <esc>
 vnoremap hh <esc>
