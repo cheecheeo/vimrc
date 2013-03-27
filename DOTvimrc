@@ -29,6 +29,7 @@ set nocompatible
 set list listchars=tab:>-,trail:.
 set mouse=a
 set completeopt=menu,preview,longest
+set complete=.,w,b,u,i " TODO Ideally we only elide the tags file for word-completion if the tags file is > N (maybe 1000) lines
 set laststatus=2
 set confirm
 set wildignore=*.swp
@@ -69,6 +70,7 @@ autocmd FileType python setlocal colorcolumn=100
 
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
+autocmd BufNewFile,BufRead *.txt setlocal complete+=k,kspell,s
 
 "All files
 autocmd BufEnter * call RemoveRedundantSpace()
