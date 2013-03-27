@@ -34,6 +34,7 @@ set laststatus=2
 set confirm
 set wildignore=*.swp
 set ttyfast
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 colorscheme slate
 
 let g:syntastic_check_on_open=1
