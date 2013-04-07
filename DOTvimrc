@@ -26,7 +26,7 @@ set incsearch
 set smarttab
 set autoindent smartindent
 set backspace=indent,eol,start
-set list listchars=tab:>-,trail:.
+set list listchars=tab:↦-,trail:⎵
 set mouse=a
 set completeopt=menu,preview,longest
 set complete=.,w,b,u,i " TODO Ideally we only elide the tags file for word-completion if the tags file is > N (maybe 1000) lines
