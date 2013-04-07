@@ -8,6 +8,7 @@ map <F4> a<C-R>=strftime("%c")<CR><Esc>
 map <F2> aJohn Chee<Esc>
 map <F5> :make<CR>
 
+set nocompatible
 set tabstop=8
 set shiftwidth=2
 set shiftround
@@ -25,7 +26,6 @@ set incsearch
 set smarttab
 set autoindent smartindent
 set backspace=indent,eol,start
-set nocompatible
 set list listchars=tab:>-,trail:.
 set mouse=a
 set completeopt=menu,preview,longest
