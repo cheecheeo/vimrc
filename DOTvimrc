@@ -194,4 +194,5 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 " cabal install lushtags
 Bundle 'bitc/lushtags'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 " vim +BundleInstall +qall
