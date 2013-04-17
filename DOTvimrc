@@ -29,13 +29,21 @@ set backspace=indent,eol,start
 set list listchars=tab:↦-,trail:⎵
 set mouse=a
 set completeopt=menu,preview,longest
-set complete=.,w,b,u,i " TODO Ideally we only elide the tags file for word-completion if the tags file is > N (maybe 1000) lines
 set laststatus=2
 set confirm
 set wildignore=*.swp
 set ttyfast
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
+
+" Don't use the tags file for completion if it's too large
+function! SetComplete()
+  let tags_file = findfile("tags", ".;")
+  if system("wc -l " . tags_file . " | awk '{print $1}'") > 5000
+    set complete=.,w,b,u,i
+  endif
+endfunction
+call SetComplete()
 
 let g:ctrlp_max_files=0
 let g:syntastic_check_on_open=1
