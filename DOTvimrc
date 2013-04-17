@@ -36,7 +36,6 @@ set wildignore=*.swp
 set ttyfast
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
-colorscheme slate
 
 let g:ctrlp_max_files=0
 let g:syntastic_check_on_open=1
@@ -182,6 +181,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles
+" TODO follow up on documenting this feature: https://github.com/gmarik/vundle/issues/54#issuecomment-16417191
+Bundle 'altercation/solarized', {'rtp': 'vim-colors-solarized/'}
 Bundle 'dag/vim2hs'
 " cd ~/.vim/bundle/vimproc/ && make -f make_unix.mak
 Bundle 'Shougo/vimproc'
@@ -197,3 +198,10 @@ Bundle 'majutsushi/tagbar'
 Bundle 'bitc/lushtags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 " vim +BundleInstall +qall
+
+" http://stackoverflow.com/a/5702498/1019205
+try
+  colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme slate
+endtry
