@@ -35,6 +35,7 @@ set wildignore=*.swp
 set ttyfast
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
+set scrolloff=10
 
 " Don't use the tags file for completion if it's too large
 function! SetComplete()
