@@ -37,14 +37,20 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set scrolloff=10
 
-" Don't use the tags file for completion if it's too large
+" Don't use the tags file for completion if it is too large
+" Implemented using 'awk' rather than 'wc' for short-circuiting performance when
+" max_line_count is reached
 function! SetComplete()
   let tags_file = findfile("tags", ".;")
-  if system("wc -l " . tags_file . " | awk '{print $1}'") > 5000
+  let max_line_count = 5000
+  let awk_program = "awk '{line_no++; if (line_no >= " . max_line_count . ") exit} END {print line_no}' " . tags_file
+  let tags_line_count = system(awk_program)
+  if tags_line_count >= max_line_count
     set complete=.,w,b,u,i
   endif
 endfunction
 call SetComplete()
+
 
 let g:ctrlp_max_files=0
 let g:syntastic_check_on_open=1
