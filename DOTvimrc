@@ -113,6 +113,7 @@ endfunction
 " only write if needed and update the start time after the save
 function! UpdateFile()
   if exists("b:start_time") && &modifiable > 0 && ((localtime() - b:start_time) >= 2)
+    " TODO it would be nice if this could 'update' all the buffers
     update
     :SyntasticCheck
     let b:start_time=localtime()
