@@ -146,7 +146,7 @@ inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
     highlight Visual guibg=white guifg=black
     set guifont=DejaVu\ Sans\ Mono\ 9
 :else
-    set bg=dark
+    set bg=light
 :endif
 
 set t_Co=256
