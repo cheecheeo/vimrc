@@ -51,12 +51,12 @@ function! SetComplete()
 endfunction
 call SetComplete()
 
-
 let g:ctrlp_max_files=0
 let g:syntastic_check_on_open=1
 let g:syntastic_python_flake8_args='--ignore=E111,E121,E126,E272,E501'
 let g:haskell_conceal_wide=1
 let g:undotree_SplitWidth = 35
+let g:neocomplcache_enable_at_startup = 1
 
 inoremap hh <esc>
 vnoremap hh <esc>
@@ -217,6 +217,7 @@ Bundle 'bitc/lushtags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'vim-scripts/Python-Syntax-Folding'
 Bundle 'mbbill/undotree'
+Bundle 'Shougo/neocomplcache'
 " vim +BundleInstall +qall
 
 " http://stackoverflow.com/a/5702498/1019205
