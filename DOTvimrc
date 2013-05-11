@@ -214,6 +214,7 @@ Bundle 'majutsushi/tagbar'
 " cabal install lushtags
 Bundle 'bitc/lushtags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'vim-scripts/Python-Syntax-Folding'
 " vim +BundleInstall +qall
 
 " http://stackoverflow.com/a/5702498/1019205
