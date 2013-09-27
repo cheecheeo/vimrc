@@ -101,6 +101,7 @@ autocmd BufNewFile,BufRead *.txt setlocal complete+=k,kspell,s
 
 "All files
 autocmd BufEnter * call RemoveRedundantSpace()
+autocmd BufWritePre * call RemoveRedundantSpace()
 if !&diff
   autocmd BufEnter * nested :call tagbar#autoopen(0)
 endif
