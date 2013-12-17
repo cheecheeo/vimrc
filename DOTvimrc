@@ -201,8 +201,6 @@ function! RandomColor()
   "echo g:colors_name
 endfunction
 
-
-filetype off
 filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle/
