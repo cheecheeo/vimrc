@@ -66,6 +66,15 @@ let g:neocomplcache_enable_at_startup = 1
 
 inoremap hh <esc>
 vnoremap hh <esc>
+
+" irssi-like tab movement
+inoremap <A-Right> :tabnext<CR>
+vnoremap <A-Right> :tabnext<CR>
+nnoremap <A-Right> :tabnext<CR>
+inoremap <A-Left>  :tabprevious<CR>
+vnoremap <A-Left>  :tabprevious<CR>
+nnoremap <A-Left>  :tabprevious<CR>
+
 " http://stackoverflow.com/a/7078429/1019205
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! %!sudo tee > /dev/null %
