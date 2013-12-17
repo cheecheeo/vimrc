@@ -96,6 +96,10 @@ autocmd FileType python setlocal colorcolumn=100
 "autocmd FileType haskell set wildignore+=*.o,*.hi
 "autocmd FileType haskell setlocal makeprg=ghc\ %
 
+"Scala
+autocmd BufNewFile,BufRead *.scala setlocal filetype=scala
+autocmd FileType scala setlocal wildignore+=*.class
+
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
 autocmd BufNewFile,BufRead *.txt setlocal complete+=k,kspell,s
@@ -117,6 +121,10 @@ function! RemoveRedundantSpace()
     "remove trailing whitespace after lines
     :%s/\s\+$//e
   endif
+endfunction
+
+function! ScalaDeps(directory)
+  echo system("cat " . a:directory . "/**/*.scala | egrep '^\s?import' | sort -u")
 endfunction
 
 " :he autosave will fix this someday hopefully
