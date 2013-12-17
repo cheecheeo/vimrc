@@ -147,18 +147,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
 inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
 
-" setup for the visual environment
-:if has('gui_running')
-    set guioptions-=T
-    set guioptions+=c
-    "set guifont=-schumacher-clean-medium-r-normal-*-*-120-*-*-c-*-iso646.1991-irv
-    "set guifont=Monospace\ 8,Terminal\ 8,fixed
-    highlight Normal guibg=black guifg=white
-    highlight Visual guibg=white guifg=black
-    set guifont=DejaVu\ Sans\ Mono\ 9
-:else
-    set bg=light
-:endif
+set bg=light
 
 set t_Co=256
 
