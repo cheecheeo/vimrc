@@ -72,6 +72,14 @@ inoremap hh <esc>
 vnoremap hh <esc>
 
 " irssi-like tab movement
+"   for tmux
+inoremap OC :tabnext<CR>
+vnoremap OC :tabnext<CR>
+nnoremap OC :tabnext<CR>
+inoremap OD :tabprevious<CR>
+vnoremap OD :tabprevious<CR>
+nnoremap OD :tabprevious<CR>
+"   for anything else
 inoremap <A-Right> :tabnext<CR>
 vnoremap <A-Right> :tabnext<CR>
 nnoremap <A-Right> :tabnext<CR>
