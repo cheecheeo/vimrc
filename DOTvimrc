@@ -36,7 +36,8 @@ set wildignore=*.swp
 set ttyfast
 set statusline=%<%F\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
-set scrolloff=10
+set nostartofline
+set scrolloff=3
 
 " Don't use the tags file for completion if it is too large
 " Implemented using 'awk' rather than 'wc' for short-circuiting performance when
