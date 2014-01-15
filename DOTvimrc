@@ -112,6 +112,21 @@ autocmd FileType python setlocal colorcolumn=100
 "Scala
 autocmd BufNewFile,BufRead *.scala setlocal filetype=scala
 autocmd FileType scala setlocal wildignore+=*.class
+let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds'     : [
+        \ 'p:packages:1',
+        \ 'V:values',
+        \ 'v:variables',
+        \ 'T:types',
+        \ 't:traits',
+        \ 'o:objects',
+        \ 'a:aclasses',
+        \ 'c:classes',
+        \ 'r:cclasses',
+        \ 'm:methods'
+    \ ]
+\ }
 
 "Text
 autocmd BufNewFile,BufRead *.txt setlocal spell
@@ -138,6 +153,10 @@ endfunction
 
 function! ScalaDeps(directory)
   echo system("cat " . a:directory . "/**/*.scala | egrep '^\s?import' | sort -u")
+endfunction
+
+function! ScalaDefs(symbol)
+  echo system("git grep -i '\\(object\\|trait\\|class\\|type\\)" . a:symbol . "'")
 endfunction
 
 " :he autosave will fix this someday hopefully
@@ -239,6 +258,7 @@ Bundle 'vim-scripts/Python-Syntax-Folding'
 Bundle 'mbbill/undotree'
 Bundle 'Shougo/neocomplcache'
 " vim +BundleInstall +qall
+Bundle 'scala/scala-dist', {'rtp': 'tool-support/src/vim/'}
 
 " http://stackoverflow.com/a/5702498/1019205
 try
