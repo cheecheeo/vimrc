@@ -8,6 +8,7 @@ map <F4> a<C-R>=strftime("%c")<CR><Esc>
 map <F2> aJohn Chee<Esc>
 map <F5> :make<CR>
 
+set autowrite
 set nocompatible
 set tabstop=8
 set shiftwidth=2
