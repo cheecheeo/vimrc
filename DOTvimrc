@@ -39,6 +39,8 @@ set showcmd
 set nostartofline
 set scrolloff=3
 
+syntax enable
+
 " Don't use the tags file for completion if it is too large
 " Implemented using 'awk' rather than 'wc' for short-circuiting performance when
 " max_line_count is reached
