@@ -6,5 +6,5 @@ set guioptions+=c
 "set guifont=Monospace\ 8,Terminal\ 8,fixed
 highlight Normal guibg=black guifg=white
 highlight Visual guibg=white guifg=black
-set guifont=DejaVu\ Sans\ Mono\ 9
+set guifont=DejaVu\ Sans\ Mono\ 7
 set bg=light
