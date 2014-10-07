@@ -69,20 +69,19 @@ let g:haskell_conceal_wide=1
 let g:undotree_SplitWidth = 35
 let g:neocomplcache_enable_at_startup = 1
 
-
 " irssi-like tab movement
 "   for tmux
-inoremap OC :tabnext<CR>
 vnoremap OC :tabnext<CR>
 nnoremap OC :tabnext<CR>
-inoremap OD :tabprevious<CR>
 vnoremap OD :tabprevious<CR>
 nnoremap OD :tabprevious<CR>
+vnoremap [1;3C :tabnext<CR>
+nnoremap [1;3C :tabnext<CR>
+vnoremap [1;3D :tabprevious<CR>
+nnoremap [1;3D :tabprevious<CR>
 "   for anything else
-inoremap <A-Right> :tabnext<CR>
 vnoremap <A-Right> :tabnext<CR>
 nnoremap <A-Right> :tabnext<CR>
-inoremap <A-Left>  :tabprevious<CR>
 vnoremap <A-Left>  :tabprevious<CR>
 nnoremap <A-Left>  :tabprevious<CR>
 
