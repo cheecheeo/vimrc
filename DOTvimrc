@@ -38,6 +38,7 @@ set statusline=%<%F\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set nostartofline
 set scrolloff=3
+set updatetime=100
 
 syntax enable
 
