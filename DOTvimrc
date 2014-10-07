@@ -75,6 +75,7 @@ vnoremap OC :tabnext<CR>
 nnoremap OC :tabnext<CR>
 vnoremap OD :tabprevious<CR>
 nnoremap OD :tabprevious<CR>
+
 vnoremap [1;3C :tabnext<CR>
 nnoremap [1;3C :tabnext<CR>
 vnoremap [1;3D :tabprevious<CR>
@@ -108,6 +109,9 @@ autocmd FileType python setlocal shiftwidth=2
 autocmd FileType python setlocal makeprg=pyflakes\ %
 autocmd FileType python setlocal wildignore+=*.pyc
 autocmd FileType python setlocal colorcolumn=100
+
+"Markdown
+autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md setlocal filetype=markdown
 
 "Haskell
 "autocmd BufEnter *.hs :%!stylish-haskell
