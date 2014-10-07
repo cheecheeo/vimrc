@@ -69,8 +69,6 @@ let g:haskell_conceal_wide=1
 let g:undotree_SplitWidth = 35
 let g:neocomplcache_enable_at_startup = 1
 
-inoremap hh <esc>
-vnoremap hh <esc>
 
 " irssi-like tab movement
 "   for tmux
