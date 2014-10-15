@@ -38,7 +38,6 @@ set statusline=%<%F\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set nostartofline
 set scrolloff=3
-set updatetime=100
 
 syntax enable
 
@@ -68,6 +67,8 @@ let g:syntastic_mode_map = { 'mode': 'active' }
 let g:haskell_conceal_wide=1
 let g:undotree_SplitWidth = 35
 let g:neocomplcache_enable_at_startup = 1
+let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 " irssi-like tab movement
 "   for tmux
@@ -151,7 +152,6 @@ endif
 "autocmd BufWritePre * :%s/\s\+$//e
 " http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
 au BufRead,BufNewFile * let b:start_time=localtime()
-au CursorHold * call UpdateFile()
 au BufWritePre * let b:start_time=localtime()
 
 function! RemoveRedundantSpace()
@@ -167,18 +167,6 @@ endfunction
 
 function! ScalaDefs(symbol)
   echo system("git grep -i '\\(object\\|trait\\|class\\|type\\)" . a:symbol . "'")
-endfunction
-
-" :he autosave will fix this someday hopefully
-" http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
-" only write if needed and update the start time after the save
-function! UpdateFile()
-  if exists("b:start_time") && &modifiable > 0 && ((localtime() - b:start_time) >= 2)
-    " TODO it would be nice if this could 'update' all the buffers
-    update
-    :SyntasticCheck
-    let b:start_time=localtime()
-  endif
 endfunction
 
 "intelligently decide whether to insert
@@ -266,6 +254,7 @@ Bundle 'bitc/lushtags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'vim-scripts/Python-Syntax-Folding'
 Bundle 'mbbill/undotree'
+Bundle '907th/vim-auto-save'
 Bundle 'Shougo/neocomplcache'
 " vim +BundleInstall +qall
 Bundle 'scala/scala-dist', {'rtp': 'tool-support/src/vim/'}
