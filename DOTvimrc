@@ -38,6 +38,7 @@ set statusline=%<%F\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set showcmd
 set nostartofline
 set scrolloff=3
+set updatetime=700
 
 syntax enable
 
@@ -67,6 +68,7 @@ let g:haskell_conceal_wide=1
 let g:undotree_SplitWidth = 35
 let g:neocomplcache_enable_at_startup = 1
 let g:auto_save = 1  " enable AutoSave on Vim startup
+let g:auto_save_no_updatetime = 1
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 " irssi-like tab movement
@@ -152,6 +154,10 @@ endif
 " http://vim.wikia.com/wiki/Auto-save_current_buffer_periodically
 au BufRead,BufNewFile * let b:start_time=localtime()
 au BufWritePre * let b:start_time=localtime()
+
+augroup syntastic
+    autocmd CursorHold * nested update
+augroup END
 
 function! RemoveRedundantSpace()
   if &modifiable > 0
