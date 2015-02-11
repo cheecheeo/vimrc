@@ -252,6 +252,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-fugitive'
 " sudo aptitude install python-pip
 " sudo pip install flake8 pylint
+" cabal install shellcheck
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 " cabal install lushtags
