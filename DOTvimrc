@@ -120,6 +120,19 @@ autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md setlocal filetyp
 "autocmd BufWritePre *.hs :%!stylish-haskell
 "autocmd FileType haskell set wildignore+=*.o,*.hi
 "autocmd FileType haskell setlocal makeprg=ghc\ %
+"
+"Stolen straight from haskell-vim-now:
+" Show types in completion suggestions
+let g:necoghc_enable_detailed_browse = 1
+" Type of expression under cursor
+nmap <silent> <leader>ht :GhcModType<CR>
+" Insert type of expression under cursor
+nmap <silent> <leader>hT :GhcModTypeInsert<CR>
+" GHC errors and warnings
+nmap <silent> <leader>hc :SyntasticCheck ghc_mod<CR>
+" Haskell Lint
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['haskell'] }
+nmap <silent> <leader>hl :SyntasticCheck hlint<CR>
 
 "Scala
 autocmd BufNewFile,BufRead *.scala setlocal filetype=scala
