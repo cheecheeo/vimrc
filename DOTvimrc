@@ -247,6 +247,7 @@ Bundle 'dag/vim2hs'
 Bundle 'Shougo/vimproc'
 " cabal install ghc-mod
 Bundle 'eagletmt/ghcmod-vim'
+Bundle 'eagletmt/neco-ghc'
 Bundle 'kien/ctrlp.vim'
 " sudo aptitude install ack-grep
 Bundle 'mileszs/ack.vim'
