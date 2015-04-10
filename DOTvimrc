@@ -155,9 +155,10 @@ endif
 au BufRead,BufNewFile * let b:start_time=localtime()
 au BufWritePre * let b:start_time=localtime()
 
-augroup syntastic
-    autocmd CursorHold * nested update
-augroup END
+" NOTE: this breaks vim-auto-save
+"augroup syntastic
+"    autocmd CursorHold * nested update
+"augroup END
 
 function! RemoveRedundantSpace()
   if &modifiable > 0
