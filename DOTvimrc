@@ -280,6 +280,7 @@ Bundle 'Shougo/neocomplcache'
 " vim +BundleInstall +qall
 Bundle 'scala/scala-dist', {'rtp': 'tool-support/src/vim/'}
 Bundle 'idris-hackers/idris-vim'
+Bundle 'elzr/vim-json'
 
 " http://stackoverflow.com/a/5702498/1019205
 try
