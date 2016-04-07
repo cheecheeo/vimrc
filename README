@@ -1,2 +1,2 @@
-test -e $HOME/.vimrc && cp $HOME/.vimrc $HOME/DOTvimrc || cp DOTvimrc $HOME/.vimrc
-test -e $HOME/.gvimrc && cp $HOME/.gvimrc $HOME/DOTgvimrc || cp DOTgvimrc $HOME/.gvimrc
+test -e $HOME/.vimrc && cp $HOME/.vimrc $HOME/DOTvimrc; cp DOTvimrc $HOME/.vimrc
+test -e $HOME/.gvimrc && cp $HOME/.gvimrc $HOME/DOTgvimrc; cp DOTgvimrc $HOME/.gvimrc
